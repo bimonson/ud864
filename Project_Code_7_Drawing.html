@@ -261,6 +261,9 @@
           // Make sure the search is re-done if the poly is changed.
           polygon.getPath().addListener('set_at', searchWithinPolygon);
           polygon.getPath().addListener('insert_at', searchWithinPolygon);
+          // Calculates area and alerts user
+          let polyArea = google.maps.geometry.spherical.computeArea(polygon.getPath());
+          alert(`${polyArea.toFixed(2)} + Square Meters`);
         });
       }
 
@@ -371,7 +374,7 @@
 
     <script async defer
         src=
-        "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=MYAPIKEY&v=3&callback=initMap">
+        "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyDS9QrlzMGanhwgap_2HDTynKUPLgWCyUg&v=3&callback=initMap">
     </script>
 
   </body>
